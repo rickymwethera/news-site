@@ -3,8 +3,7 @@
 #### By Ricky Mwethera
 
 ### Live link
-https://git.heroku.com/ricky-newssite.git
-
+https://ricky-newssite.herokuapp.com/
 
 ## Description
 This is an application that gives the user regularly updated news from different sources
