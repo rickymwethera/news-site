@@ -1,20 +1,64 @@
+
 {% macro displayNewsList(news_list) %}
-    {% for news in news_list %}
-    <div class="row  bg-secondary border border-bottom-10 ">
-     <div class="col-md-4">
-    <h4 class="text-center text-white">
-        {{news.title}}
-    </h4>
-    </div>
-    <div class="col-md-4">
-    <img src = "{{news.urlToImage}}" alt = "{{news.title}}" height="200" width="350">
-    </div>
-   <div class="col-md-4">
-    {{news.description}}
-    {{news.content}}
-    {{news.publishedAt}}
-    </div>
-   
-    </div>
+<style>
+    .title{
+        color: red;
+    }
+    .title:hover{
+        
+        text-decoration: none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    {% for source in news_list %}
+        
+    
+            <a href="/sources/{{source.id}}"> <h3 class="title">{{ source.name}}</h3></a>
+        
+            <p>{{source.description}}</p>
+
+        <hr>
+       
     {% endfor %}
+</div>
+</div>
+    
+
+{% endmacro %}
+
+{% macro displayResults(articles_list) %}
+<style>
+	.img{
+		width: 200px;
+		height: 200px;
+	}
+    .data{
+        color: black;
+        font-weight: bold;
+    }
+	
+</style>
+
+{% for article in articles_list %}
+<div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    
+        <img class="img" src="{{article.image}}" alt="{{article.title}}">
+    
+</div>	
+<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">     
+
+        <h3><a href="{{article.url}}">{{article.title}}</a></h3>
+        <p>{{article.description}}</p>			      
+        <p><span class="data">Posted on:</span> <u> {{article.date|truncate(13)}}</u> <span class="data">by:</span><u>{{article.author}}</u></p>	
+        <hr>
+</div>	
+</div>
+        
+
+
+
+{% endfor %}
 {% endmacro %}

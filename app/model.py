@@ -3,12 +3,11 @@ class Source:
     new source class
 
     '''
-    def __init__(self,id,name,description,urlimage,published):
+    def __init__(self,id,name,description):
         self.id = id
         self.name = name
         self.description = description
-        self.urlimage = urlimage
-        self.published = published
+      
 
 class Articles:
     '''
