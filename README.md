@@ -2,6 +2,10 @@
 
 #### By Ricky Mwethera
 
+### Live link
+https://git.heroku.com/ricky-newssite.git
+
+
 ## Description
 This is an application that gives the user regularly updated news from different sources
 
